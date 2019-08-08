@@ -14,23 +14,22 @@ code {
 
 .ui.header:first-child {
   margin-bottom: 1.5em;
-  font-family: 'Courier New', Courier, monospace;
-
+  font-family: "Courier New", Courier, monospace;
 }
-.ui.button{
+.ui.button {
   margin-left: 0.5em;
 }
-input{
-font-size: 1.3em;
+input {
+  font-size: 1.3em;
 }
 
-#root{
+#root {
   position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.ui.card>.content>.header{
+.ui.card > .content > .header {
   margin: 0.2em 0 0 0;
 }

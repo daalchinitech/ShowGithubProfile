@@ -1,9 +1,7 @@
-import React from 'react';
-import MainRouter from './container/MainRouter'
+import React from "react";
+import MainRouter from "./container/MainRouter";
 function App() {
-  return (
-   <MainRouter />
-  );
+  return <MainRouter />;
 }
 
 export default App;
