@@ -1,7 +1,7 @@
 import React from "react";
 import { Header, Image, Table } from "semantic-ui-react";
 
-function FollowingFollower({ pageTitle, users, onClick }) {
+function FollowingFollower({ pageTitle, users }) {
   console.log(users);
 
   return (

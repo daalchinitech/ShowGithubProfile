@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import MainPage from "../container/MainPage";
 import UserPage from "../container/UserPage";
 import FollowingFollower from "../container/FollowingFollower";
+import Repository from "../container/Repository";
 
 class MainRouter extends Component {
   render() {
@@ -35,6 +36,17 @@ class MainRouter extends Component {
             />
           )}
         />
+        <Route
+          exact
+          path="/:id/repository"
+          render={prop => (
+            <Repository
+              pageTitle={"Repository"}
+              users={this.props.repo}
+              {...prop}
+            />
+          )}
+        />
       </Switch>
     );
   }
@@ -43,7 +55,8 @@ class MainRouter extends Component {
 const mapStateToProps = store => {
   return {
     following: store.following,
-    followers: store.followers
+    followers: store.followers,
+    repo: store.repo
   };
 };
 
