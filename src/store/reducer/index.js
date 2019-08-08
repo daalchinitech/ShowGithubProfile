@@ -1,67 +1,55 @@
 import {
-  setCurrentUser,
-  addError,
-  removeError,
-  setLoading,
-  removeLoading,
-  setFollowers,
-  setFollowing,
-  setRepo,
-  setStarrted,
-  setOrganizations
+  SETCURRENTUSER,
+  SETFOLLOWER,
+  SETFOLLOWING,
+  SETLOADING,
+  SETREPO,
+  ADDERROR,
+  REMOVEERROR,
+  REMOVELOADING
 } from "../constants";
 
 function rootReducer(state = {}, action) {
   switch (action.type) {
-    case setCurrentUser:
+    case SETCURRENTUSER:
       return {
         ...state,
         currentUser: action.data
       };
-    case addError:
+    case ADDERROR:
       return {
         ...state,
         err: action.err
       };
-    case removeError:
+    case REMOVEERROR:
       return {
         ...state,
         err: null
       };
-    case setLoading:
+    case SETLOADING:
       return {
         ...state,
         loading: true
       };
-    case removeLoading:
+    case REMOVELOADING:
       return {
         ...state,
         loading: false
       };
-    case setFollowers:
+    case SETFOLLOWER:
       return {
         ...state,
         followers: action.followers
       };
-    case setFollowing:
+    case SETFOLLOWING:
       return {
         ...state,
         following: action.following
       };
-    case setRepo:
+    case SETREPO:
       return {
         ...state,
         repo: action.repo
-      };
-    case setStarrted:
-      return {
-        ...state,
-        starred: action.starred
-      };
-    case setOrganizations:
-      return {
-        ...state,
-        organizations: action.organizations
       };
     default:
       return state;

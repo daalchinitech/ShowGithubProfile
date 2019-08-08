@@ -1,23 +1,19 @@
-const setCurrentUser = "SET_CURRENT_USER";
-const addError = "ADD_ERROR";
-const removeError = "REMOVE_ERROR";
-const setLoading = "SET_LOADING";
-const removeLoading = "REMOVE_LOADING";
-const setFollowers = "SET_FOLLOWERS";
-const setFollowing = "SET_FOLLOWING";
-const setRepo = "SET_REPO";
-const setStarrted = "SET_STARRED";
-const setOrganizations = "SET_ORGANIZATIONS";
+const SETCURRENTUSER = "SET_CURRENT_USER";
+const ADDERROR = "ADD_ERROR";
+const REMOVEERROR = "REMOVE_ERROR";
+const SETLOADING = "SET_LOADING";
+const REMOVELOADING = "REMOVE_LOADING";
+const SETFOLLOWER = "SET_FOLLOWERS";
+const SETFOLLOWING = "SET_FOLLOWING";
+const SETREPO = "SET_REPO";
 
 export {
-  setCurrentUser,
-  addError,
-  removeError,
-  setLoading,
-  removeLoading,
-  setFollowers,
-  setFollowing,
-  setRepo,
-  setStarrted,
-  setOrganizations
+  SETCURRENTUSER,
+  ADDERROR,
+  REMOVEERROR,
+  SETLOADING,
+  REMOVELOADING,
+  SETFOLLOWER,
+  SETFOLLOWING,
+  SETREPO
 };

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import FollowingFollowerComponent from "../component/FollowingFollowerPage";
 import { connect } from "react-redux";
-import { AsyncSetFollowersFollowing } from "../store/action";
+import { AsyncSetFollowersFollowingRepo } from "../store/action";
 
 class FollowingFollower extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -41,7 +41,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setFollowersFollowing: data => dispatch(AsyncSetFollowersFollowing(data))
+    setFollowersFollowing: data =>
+      dispatch(AsyncSetFollowersFollowingRepo(data))
   };
 };
 

@@ -1,46 +1,44 @@
 import axios from "axios";
 import {
-  setCurrentUser,
-  addError,
-  removeError,
-  setLoading,
-  removeLoading,
-  setFollowers,
-  setFollowing,
-  setRepo,
-  setStarrted,
-  setOrganizations
+  SETCURRENTUSER,
+  ADDERROR,
+  REMOVEERROR,
+  SETLOADING,
+  REMOVELOADING,
+  SETFOLLOWER,
+  SETFOLLOWING,
+  SETREPO
 } from "../constants";
 
 const settingCurrentUser = data => ({
-  type: setCurrentUser,
+  type: SETCURRENTUSER,
   data
 });
 const addingError = err => ({
-  type: addError,
+  type: ADDERROR,
   err
 });
 
 const removingError = () => ({
-  type: removeError
+  type: REMOVEERROR
 });
 
 const settingLoading = () => ({
-  type: setLoading
+  type: SETLOADING
 });
 const removingLoading = () => ({
-  type: removeLoading
+  type: REMOVELOADING
 });
 const settingFollowers = followers => ({
-  type: setFollowers,
+  type: SETFOLLOWER,
   followers
 });
 const settingFollowing = following => ({
-  type: setFollowing,
+  type: SETFOLLOWING,
   following
 });
 const settingRepo = repo => ({
-  type: setRepo,
+  type: SETREPO,
   repo
 });
 
@@ -61,7 +59,7 @@ const AsyncSetUser = username => {
   };
 };
 
-const AsyncSetFollowersFollowing = data => {
+const AsyncSetFollowersFollowingRepo = data => {
   return async dispatch => {
     try {
       dispatch(settingLoading());
@@ -86,7 +84,7 @@ const AsyncSetFollowersFollowing = data => {
 
 export {
   AsyncSetUser,
-  AsyncSetFollowersFollowing,
+  AsyncSetFollowersFollowingRepo,
   removingError,
   settingLoading
 };

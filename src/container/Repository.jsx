@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import RepositoryPage from "../component/RepositoryPage";
 import { connect } from "react-redux";
-import { AsyncSetFollowersFollowing } from "../store/action";
+import { AsyncSetFollowersFollowingRepo } from "../store/action";
 
 class Repository extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -18,6 +18,10 @@ class Repository extends Component {
   }
 
   render() {
+    const { loading } = this.props;
+    if (loading) {
+      return <div></div>;
+    }
     return (
       <RepositoryPage
         pageTitle={this.props.pageTitle}
@@ -27,12 +31,18 @@ class Repository extends Component {
   }
 }
 
+const mapStateToProps = store => {
+  return {
+    loading: store.loading
+  };
+};
 const mapDispatchToProps = dispatch => {
   return {
-    setFollowersFollowing: data => dispatch(AsyncSetFollowersFollowing(data))
+    setFollowersFollowing: data =>
+      dispatch(AsyncSetFollowersFollowingRepo(data))
   };
 };
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Repository);

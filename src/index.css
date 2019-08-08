@@ -26,6 +26,7 @@ input {
 #root {
   display: flex;
   justify-content: center;
+  margin-top: 3em;
 }
 
 .ui.card > .content > .header {
