@@ -1,18 +1,20 @@
 import React from "react";
 import { Header, Image, Table } from "semantic-ui-react";
 
-export default function Following({ following }) {
-  console.log(following);
+function FollowingFollower({ pageTitle, users, onClick }) {
+  console.log(users);
 
   return (
     <Table basic="very" celled collapsing>
       <Table.Header>
         <Table.Row>
-          <Header as="h1">Following</Header>
+          <Table.HeaderCell>
+            <Header as="h1"> {pageTitle}</Header>{" "}
+          </Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        {following.map(user => {
+        {users.map(user => {
           return (
             <Table.Row key={user.id}>
               <Table.Cell>
@@ -28,3 +30,5 @@ export default function Following({ following }) {
     </Table>
   );
 }
+
+export default FollowingFollower;

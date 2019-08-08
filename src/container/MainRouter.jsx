@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import MainPage from "../container/MainPage";
 import UserPage from "../container/UserPage";
-import FollowingPage from "../component/FollowingPage";
+import FollowingFollower from "../container/FollowingFollower";
 
 class MainRouter extends Component {
   render() {
@@ -17,7 +17,22 @@ class MainRouter extends Component {
           exact
           path="/:id/following"
           render={prop => (
-            <FollowingPage following={this.props.following} {...prop} />
+            <FollowingFollower
+              pageTitle={"Following"}
+              users={this.props.following}
+              {...prop}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/:id/followers"
+          render={prop => (
+            <FollowingFollower
+              pageTitle={"Follower"}
+              users={this.props.followers}
+              {...prop}
+            />
           )}
         />
       </Switch>
@@ -27,7 +42,8 @@ class MainRouter extends Component {
 
 const mapStateToProps = store => {
   return {
-    following: store.following
+    following: store.following,
+    followers: store.followers
   };
 };
 
