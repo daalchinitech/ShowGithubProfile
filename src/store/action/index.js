@@ -44,15 +44,6 @@ const settingRepo = repo => ({
   repo
 });
 
-const settingStarrted = starred => ({
-  type: setStarrted,
-  starred
-});
-const settingOrganizations = organizations => ({
-  type: setOrganizations,
-  organizations
-});
-
 const AsyncSetUser = username => {
   return async dispatch => {
     try {
@@ -77,7 +68,8 @@ const AsyncSetFollowersFollowing = data => {
       const { type, link } = data;
       const response = await axios.get(`${link}`);
       console.log(response);
-
+      dispatch(removingLoading());
+      dispatch(removingError());
       if (type.toUpperCase() === "FOLLOWERS") {
         dispatch(settingFollowers(response.data));
       } else if (type.toUpperCase() === "FOLLOWING") {
@@ -85,8 +77,6 @@ const AsyncSetFollowersFollowing = data => {
       } else if (type.toUpperCase() === "REPOSITORY") {
         dispatch(settingRepo(response.data));
       }
-
-      dispatch(removeLoading());
     } catch (err) {
       console.log(err);
       dispatch(addingError(err));

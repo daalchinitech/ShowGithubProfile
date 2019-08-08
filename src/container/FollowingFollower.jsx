@@ -19,6 +19,10 @@ class FollowingFollower extends Component {
   }
 
   render() {
+    const { loading } = this.props;
+    if (loading) {
+      return <div></div>;
+    }
     return (
       <FollowingFollowerComponent
         pageTitle={this.props.pageTitle}
@@ -29,6 +33,12 @@ class FollowingFollower extends Component {
   }
 }
 
+const mapStateToProps = store => {
+  return {
+    loading: store.loading
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     setFollowersFollowing: data => dispatch(AsyncSetFollowersFollowing(data))
@@ -36,6 +46,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(withRouter(FollowingFollower));
