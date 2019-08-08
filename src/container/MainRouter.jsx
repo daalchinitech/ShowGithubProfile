@@ -17,10 +17,7 @@ class MainRouter extends Component {
           exact
           path="/:id/following"
           render={prop => (
-            <FollowingPage
-              following={this.props.following.following}
-              {...prop}
-            />
+            <FollowingPage following={this.props.following} {...prop} />
           )}
         />
       </Switch>
