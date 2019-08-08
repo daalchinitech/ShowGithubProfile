@@ -58,10 +58,10 @@ const AsyncSetUser = username => {
     try {
       dispatch(settingLoading());
       dispatch(removingError());
-      const repsonse = await axios.get(
+      const response = await axios.get(
         `https://api.github.com/users/${username}`
       );
-      dispatch(settingCurrentUser(repsonse.data));
+      dispatch(settingCurrentUser(response.data));
       dispatch(removingLoading());
     } catch (err) {
       console.log(err);
@@ -75,14 +75,17 @@ const AsyncSetFollowersFollowing = data => {
     try {
       dispatch(settingLoading());
       const { type, link } = data;
-      const repsonse = await axios.get(`${link}`);
-      if (type === "Followers") {
-        dispatch(settingFollowers(repsonse.data));
-      } else if (type === "Following") {
-        dispatch(settingFollowing(repsonse.data));
-      } else if (type === "Repository") {
-        dispatch(settingRepo(repsonse.data));
+      const response = await axios.get(`${link}`);
+      console.log(response);
+
+      if (type.toUpperCase() === "FOLLOWERS") {
+        dispatch(settingFollowers(response.data));
+      } else if (type.toUpperCase() === "FOLLOWING") {
+        dispatch(settingFollowing(response.data));
+      } else if (type.toUpperCase() === "REPOSITORY") {
+        dispatch(settingRepo(response.data));
       }
+
       dispatch(removeLoading());
     } catch (err) {
       console.log(err);
