@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
-import MainPage from "./Main";
-import UserPage from "./User";
-import FollowingFollower from "./FollowingFollower";
-import Repository from "./Repository";
+import MainPage from "../Main/container";
+import UserPage from "../User/container";
+import FollowingFollower from "../FollowerFollowing/container";
+import Repository from "../Repository/container";
 
 class MainRouter extends Component {
   render() {

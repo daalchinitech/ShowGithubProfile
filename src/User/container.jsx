@@ -7,7 +7,7 @@ import {
   removingError,
   settingLoading
 } from "../store/action";
-import UserPageComponent from "../component/UserPage";
+import UserPageComponent from "./component";
 
 class UserPage extends Component {
   componentDidMount() {

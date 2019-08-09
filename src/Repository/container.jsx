@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import RepositoryPage from "../component/RepositoryPage";
+import RepositoryPage from "./component";
 import { connect } from "react-redux";
 import { AsyncSetFollowersFollowingRepo } from "../store/action";
 
