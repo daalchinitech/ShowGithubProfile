@@ -20,7 +20,7 @@ class Repository extends Component {
   render() {
     const { loading } = this.props;
     if (loading) {
-      return <div></div>;
+      return <div>Loading...</div>;
     }
     return (
       <RepositoryPage

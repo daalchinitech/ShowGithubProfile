@@ -17,11 +17,14 @@ class FollowingFollower extends Component {
     };
     this.props.setFollowersFollowing(data);
   }
+  onClick = username => {
+    this.props.history.push(`/${username}`);
+  };
 
   render() {
     const { loading } = this.props;
     if (loading) {
-      return <div></div>;
+      return <div>Loading...</div>;
     }
     return (
       <FollowingFollowerComponent

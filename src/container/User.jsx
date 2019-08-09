@@ -38,7 +38,7 @@ class UserPage extends Component {
   render() {
     const { loading, userData } = this.props;
     if (loading || !userData) {
-      return <div></div>;
+      return <div>Loading...</div>;
     }
     return <UserPageComponent userData={userData} onClick={this.onClick} />;
   }
