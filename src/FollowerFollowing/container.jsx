@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import FollowingFollowerComponent from "./component";
 import { connect } from "react-redux";
-import { AsyncSetFollowersFollowingRepo } from "../store/action";
+import { AsyncSetFollowersFollowingRepo } from "../utils/action";
 
 class FollowingFollower extends Component {
   // eslint-disable-next-line no-useless-constructor

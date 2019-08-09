@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import RepositoryPage from "./component";
 import { connect } from "react-redux";
-import { AsyncSetFollowersFollowingRepo } from "../store/action";
+import { AsyncSetFollowersFollowingRepo } from "../utils/action";
 
 class Repository extends Component {
   // eslint-disable-next-line no-useless-constructor

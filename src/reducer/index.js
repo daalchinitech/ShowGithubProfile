@@ -7,7 +7,7 @@ import {
   ADDERROR,
   REMOVEERROR,
   REMOVELOADING
-} from "../constants";
+} from "../utils/constants";
 
 function rootReducer(state = {}, action) {
   switch (action.type) {

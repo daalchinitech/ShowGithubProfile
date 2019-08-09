@@ -8,7 +8,7 @@ import {
   SETFOLLOWER,
   SETFOLLOWING,
   SETREPO
-} from "../constants";
+} from "./constants";
 
 const settingCurrentUser = data => ({
   type: SETCURRENTUSER,

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Input, Header, Button, Message } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
-import { settingLoading } from "../store/action";
+import { settingLoading } from "../utils/action";
 
-import { AsyncSetUser } from "../store/action";
+import { AsyncSetUser } from "../utils/action";
 const InitialState = {
   username: "",
   err: ""

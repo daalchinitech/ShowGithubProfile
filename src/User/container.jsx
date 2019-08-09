@@ -6,7 +6,7 @@ import {
   AsyncSetFollowersFollowingRepo,
   removingError,
   settingLoading
-} from "../store/action";
+} from "../utils/action";
 import UserPageComponent from "./component";
 
 class UserPage extends Component {
