@@ -34,7 +34,6 @@ class MainPage extends Component {
   };
   render() {
     const { err } = this.props;
-    const { username } = this.state;
 
     return (
       <div>
@@ -50,7 +49,7 @@ class MainPage extends Component {
           error
           hidden={err ? false : true}
           header="Github 404"
-          content={`Username: '${username}' not found on Github`}
+          content={`Username not found on Github`}
         />
       </div>
     );
