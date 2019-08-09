@@ -37,6 +37,8 @@ class UserPage extends Component {
 
   render() {
     const { loading, userData } = this.props;
+    console.log(this.props);
+
     if (loading || !userData) {
       return <div>Loading...</div>;
     }
@@ -46,8 +48,8 @@ class UserPage extends Component {
 
 const mapStateToProps = store => {
   return {
-    userData: store.currentUser,
-    loading: store.loading
+    userData: store.user.currentUser,
+    loading: store.util.loading
   };
 };
 const mapDispatchToProps = dispatch => {

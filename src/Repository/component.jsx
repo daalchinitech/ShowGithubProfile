@@ -2,6 +2,8 @@ import React from 'react';
 import { Header, Table } from 'semantic-ui-react';
 
 export default function RepositoryPage({ pageTitle, users }) {
+  console.log(users);
+
   return (
     <div>
       <Header as="h1"> {pageTitle}</Header>{' '}

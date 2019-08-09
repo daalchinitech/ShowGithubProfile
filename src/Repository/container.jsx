@@ -33,7 +33,7 @@ class Repository extends Component {
 
 const mapStateToProps = store => {
   return {
-    loading: store.loading
+    loading: store.util.loading
   };
 };
 const mapDispatchToProps = dispatch => {

@@ -54,9 +54,9 @@ class MainRouter extends Component {
 
 const mapStateToProps = store => {
   return {
-    following: store.following,
-    followers: store.followers,
-    repo: store.repo
+    following: store.user.following,
+    followers: store.user.followers,
+    repo: store.user.repo
   };
 };
 

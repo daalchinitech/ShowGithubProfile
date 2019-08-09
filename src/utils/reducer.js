@@ -4,9 +4,10 @@ import {
   REMOVE_ERROR,
   REMOVE_LOADING
 } from '../utils/constants';
+
 const InitialState = {
   err: null,
-  loading: true
+  loading: false
 };
 
 function utilReducer(state = InitialState, action) {

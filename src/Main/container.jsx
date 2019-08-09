@@ -30,13 +30,11 @@ class MainPage extends Component {
       }));
     }
     this.props.setUser(username);
+    this.props.history.push(`/${username}`);
   };
   render() {
-    const { err, loading } = this.props;
+    const { err } = this.props;
     const { username } = this.state;
-    if (!loading) {
-      this.props.history.push(`/${username}`);
-    }
 
     return (
       <div>
@@ -61,8 +59,8 @@ class MainPage extends Component {
 
 const mapStateToProps = store => {
   return {
-    err: store.err,
-    loading: store.loading
+    err: store.util.err,
+    loading: store.util.loading
   };
 };
 
