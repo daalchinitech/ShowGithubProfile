@@ -1,44 +1,44 @@
-import axios from "axios";
+import axios from 'axios';
 import {
-  SETCURRENTUSER,
-  ADDERROR,
-  REMOVEERROR,
-  SETLOADING,
-  REMOVELOADING,
-  SETFOLLOWER,
-  SETFOLLOWING,
-  SETREPO
-} from "./constants";
+  SET_CURRENT_USER,
+  ADD_ERROR,
+  REMOVE_ERROR,
+  SET_LOADING,
+  REMOVE_LOADING,
+  SET_FOLLOWER,
+  SET_FOLLOWING,
+  SET_REPO
+} from './constants';
 
 const settingCurrentUser = data => ({
-  type: SETCURRENTUSER,
+  type: SET_CURRENT_USER,
   data
 });
 const addingError = err => ({
-  type: ADDERROR,
+  type: ADD_ERROR,
   err
 });
 
 const removingError = () => ({
-  type: REMOVEERROR
+  type: REMOVE_ERROR
 });
 
 const settingLoading = () => ({
-  type: SETLOADING
+  type: SET_LOADING
 });
 const removingLoading = () => ({
-  type: REMOVELOADING
+  type: REMOVE_LOADING
 });
 const settingFollowers = followers => ({
-  type: SETFOLLOWER,
+  type: SET_FOLLOWER,
   followers
 });
 const settingFollowing = following => ({
-  type: SETFOLLOWING,
+  type: SET_FOLLOWING,
   following
 });
 const settingRepo = repo => ({
-  type: SETREPO,
+  type: SET_REPO,
   repo
 });
 
@@ -68,11 +68,11 @@ const AsyncSetFollowersFollowingRepo = data => {
       console.log(response);
       dispatch(removingLoading());
       dispatch(removingError());
-      if (type.toUpperCase() === "FOLLOWERS") {
+      if (type.toUpperCase() === 'FOLLOWERS') {
         dispatch(settingFollowers(response.data));
-      } else if (type.toUpperCase() === "FOLLOWING") {
+      } else if (type.toUpperCase() === 'FOLLOWING') {
         dispatch(settingFollowing(response.data));
-      } else if (type.toUpperCase() === "REPOSITORY") {
+      } else if (type.toUpperCase() === 'REPOSITORY') {
         dispatch(settingRepo(response.data));
       }
     } catch (err) {

@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
-import { connect } from "react-redux";
-import MainPage from "../Main/container";
-import UserPage from "../User/container";
-import FollowingFollower from "../FollowerFollowing/container";
-import Repository from "../Repository/container";
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import MainPage from '../Main/container';
+import UserPage from '../User/container';
+import FollowingFollower from '../FollowerFollowing/container';
+import Repository from '../Repository/container';
 
 class MainRouter extends Component {
   render() {
@@ -19,7 +19,7 @@ class MainRouter extends Component {
           path="/:id/following"
           render={prop => (
             <FollowingFollower
-              pageTitle={"Following"}
+              pageTitle={'Following'}
               users={this.props.following}
               {...prop}
             />
@@ -30,7 +30,7 @@ class MainRouter extends Component {
           path="/:id/followers"
           render={prop => (
             <FollowingFollower
-              pageTitle={"Follower"}
+              pageTitle={'Follower'}
               users={this.props.followers}
               {...prop}
             />
@@ -41,7 +41,7 @@ class MainRouter extends Component {
           path="/:id/repository"
           render={prop => (
             <Repository
-              pageTitle={"Repository"}
+              pageTitle={'Repository'}
               users={this.props.repo}
               {...prop}
             />

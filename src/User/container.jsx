@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import {
   AsyncSetUser,
   AsyncSetFollowersFollowingRepo,
   removingError,
   settingLoading
-} from "../utils/action";
-import UserPageComponent from "./component";
+} from '../utils/action';
+import UserPageComponent from './component';
 
 class UserPage extends Component {
   componentDidMount() {
@@ -15,17 +15,17 @@ class UserPage extends Component {
   }
   onClick = (type, no) => {
     let data = {};
-    if (type === "Followers") {
+    if (type === 'Followers') {
       data = {
         type,
         link: this.props.userData.followers_url
       };
-    } else if (type === "Following") {
+    } else if (type === 'Following') {
       data = {
         type,
-        link: this.props.userData.following_url.split("{")[0]
+        link: this.props.userData.following_url.split('{')[0]
       };
-    } else if (type === "Repository") {
+    } else if (type === 'Repository') {
       data = {
         type,
         link: this.props.userData.repos_url

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import FollowingFollowerComponent from "./component";
-import { connect } from "react-redux";
-import { AsyncSetFollowersFollowingRepo } from "../utils/action";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import FollowingFollowerComponent from './component';
+import { connect } from 'react-redux';
+import { AsyncSetFollowersFollowingRepo } from '../utils/action';
 
 class FollowingFollower extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -10,9 +10,9 @@ class FollowingFollower extends Component {
     super(props);
   }
   componentDidMount() {
-    const url = "https://api.github.com/users";
+    const url = 'https://api.github.com/users';
     const data = {
-      type: this.props.match.url.split("/")[2],
+      type: this.props.match.url.split('/')[2],
       link: url + this.props.match.url
     };
     this.props.setFollowersFollowing(data);

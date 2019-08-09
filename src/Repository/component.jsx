@@ -1,10 +1,10 @@
-import React from "react";
-import { Header, Table } from "semantic-ui-react";
+import React from 'react';
+import { Header, Table } from 'semantic-ui-react';
 
 export default function RepositoryPage({ pageTitle, users }) {
   return (
     <div>
-      <Header as="h1"> {pageTitle}</Header>{" "}
+      <Header as="h1"> {pageTitle}</Header>{' '}
       <Table basic="very" celled collapsing>
         <Table.Header>
           <Table.Row>

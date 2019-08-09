@@ -1,6 +1,6 @@
-import React from "react";
-import { Card, Icon, Image, Header } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Card, Icon, Image, Header } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default function UserPage({ userData, onClick }) {
   return (
@@ -11,7 +11,7 @@ export default function UserPage({ userData, onClick }) {
         <Header size="medium">{userData.login}</Header>
 
         <Card.Meta>
-          <span className="date">{userData.created_at.split("T")[0]}</span>
+          <span className="date">{userData.created_at.split('T')[0]}</span>
         </Card.Meta>
         <Card.Description>{userData.bio}</Card.Description>
         <Card.Content>
@@ -21,7 +21,7 @@ export default function UserPage({ userData, onClick }) {
                 ? `/${userData.login}/#`
                 : `/${userData.login}/followers`
             }
-            onClick={() => onClick("Followers", userData.followers)}
+            onClick={() => onClick('Followers', userData.followers)}
           >
             <Icon name="user" />
             {`Followers ${userData.followers}`} <br />
@@ -32,7 +32,7 @@ export default function UserPage({ userData, onClick }) {
                 ? `/${userData.login}/#`
                 : `/${userData.login}/following`
             }
-            onClick={() => onClick("Following", userData.following)}
+            onClick={() => onClick('Following', userData.following)}
           >
             <Icon name="user" />
             {`Following ${userData.following} `} <br />
@@ -43,7 +43,7 @@ export default function UserPage({ userData, onClick }) {
                 ? `/${userData.login}/#`
                 : `/${userData.login}/repository`
             }
-            onClick={() => onClick("Repository", userData.public_repos)}
+            onClick={() => onClick('Repository', userData.public_repos)}
           >
             <Icon name="folder" />
             {`Repository ${userData.public_repos} `} <br />

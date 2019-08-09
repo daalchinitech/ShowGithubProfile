@@ -1,32 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App.jsx";
-import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App.jsx';
+import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-import Reducer from "./reducer";
-import thunk from "redux-thunk";
-import { compose, applyMiddleware } from "redux";
+import Reducer from './reducer';
+import thunk from 'redux-thunk';
+import { compose, applyMiddleware } from 'redux';
 
-const InitialState = {
-  err: null,
-  loading: true,
-  currentUser: null,
-  followers: [],
-  following: [],
-  repo: [],
-  starred: [],
-  organizations: []
-};
 const devTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const store = createStore(
   Reducer,
-  InitialState,
   compose(
     applyMiddleware(thunk),
     devTools
@@ -39,7 +28,7 @@ ReactDOM.render(
       <App />
     </Router>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 serviceWorker.unregister();

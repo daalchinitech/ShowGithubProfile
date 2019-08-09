@@ -1,5 +1,5 @@
-import React from "react";
-import { Header, Image, Table } from "semantic-ui-react";
+import React from 'react';
+import { Header, Image, Table } from 'semantic-ui-react';
 
 function FollowingFollower({ pageTitle, users, onClick }) {
   console.log(users);

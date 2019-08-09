@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Input, Header, Button, Message } from "semantic-ui-react";
-import { withRouter } from "react-router-dom";
-import { settingLoading } from "../utils/action";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Input, Header, Button, Message } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom';
+import { settingLoading } from '../utils/action';
 
-import { AsyncSetUser } from "../utils/action";
+import { AsyncSetUser } from '../utils/action';
 const InitialState = {
-  username: "",
-  err: ""
+  username: '',
+  err: ''
 };
 
 class MainPage extends Component {
@@ -26,7 +26,7 @@ class MainPage extends Component {
     const { username } = this.state;
     if (!username.length > 0) {
       return this.setState(prev => ({
-        err: "Invalid Username"
+        err: 'Invalid Username'
       }));
     }
     this.props.setUser(username);

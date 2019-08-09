@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import RepositoryPage from "./component";
-import { connect } from "react-redux";
-import { AsyncSetFollowersFollowingRepo } from "../utils/action";
+import React, { Component } from 'react';
+import RepositoryPage from './component';
+import { connect } from 'react-redux';
+import { AsyncSetFollowersFollowingRepo } from '../utils/action';
 
 class Repository extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -9,10 +9,10 @@ class Repository extends Component {
     super(props);
   }
   componentDidMount() {
-    const url = "https://api.github.com/users";
+    const url = 'https://api.github.com/users';
     const data = {
-      type: "Repository",
-      link: url + "/" + this.props.match.url.split("/")[1] + "/repos"
+      type: 'Repository',
+      link: url + '/' + this.props.match.url.split('/')[1] + '/repos'
     };
     this.props.setFollowersFollowing(data);
   }
