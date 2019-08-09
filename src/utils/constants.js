@@ -2,7 +2,8 @@ import {
   SET_CURRENT_USER,
   SET_FOLLOWER,
   SET_FOLLOWING,
-  SET_REPO
+  SET_REPO,
+  REMOVE_CURRENT_USER
 } from '../User/constants';
 
 const ADD_ERROR = 'ADD_ERROR';
@@ -18,5 +19,6 @@ export {
   SET_CURRENT_USER,
   SET_FOLLOWER,
   SET_FOLLOWING,
-  SET_REPO
+  SET_REPO,
+  REMOVE_CURRENT_USER
 };

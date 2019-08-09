@@ -2,7 +2,8 @@ import {
   SET_CURRENT_USER,
   SET_FOLLOWER,
   SET_FOLLOWING,
-  SET_REPO
+  SET_REPO,
+  REMOVE_CURRENT_USER
 } from '../utils/constants';
 
 const InitialState = {
@@ -33,6 +34,11 @@ function userReducer(state = InitialState, action) {
       return {
         ...state,
         repo: action.repo
+      };
+    case REMOVE_CURRENT_USER:
+      return {
+        ...state,
+        currentUser: null
       };
     default:
       return state;

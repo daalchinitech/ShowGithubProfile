@@ -10,10 +10,6 @@ import {
 import UserPageComponent from './component';
 
 class UserPage extends Component {
-  componentWillMount() {
-    if (!this.props.userData) this.props.history.push('/');
-  }
-
   componentDidMount() {
     this.props.setUser(this.props.match.params.id);
   }
@@ -41,7 +37,7 @@ class UserPage extends Component {
 
   render() {
     const { loading, userData } = this.props;
-    console.log(this.props);
+    if (!loading && !userData) this.props.history.push('/');
 
     if (loading || !userData) {
       return <div>Loading...</div>;
