@@ -11,14 +11,13 @@ import Reducer from './reducer';
 import thunk from 'redux-thunk';
 import { compose, applyMiddleware } from 'redux';
 
-const devTools =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
 const store = createStore(
   Reducer,
   compose(
     applyMiddleware(thunk),
-    devTools
+    process.env.NODE_ENV !== 'production' && window.devToolsExtension
+      ? window.devToolsExtension()
+      : f => f
   )
 );
 
