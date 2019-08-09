@@ -4,9 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+/.vscode
 
 # testing
-/coverage
+/coverageEnter Github username and 
 
 # production
 /build

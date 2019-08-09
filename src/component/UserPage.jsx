@@ -16,21 +16,33 @@ export default function UserPage({ userData, onClick }) {
         <Card.Description>{userData.bio}</Card.Description>
         <Card.Content>
           <Link
-            to={`/${userData.login}/followers`}
+            to={
+              userData.followers === 0
+                ? `/${userData.login}/#`
+                : `/${userData.login}/followers`
+            }
             onClick={() => onClick("Followers", userData.followers)}
           >
             <Icon name="user" />
             {`Followers ${userData.followers}`} <br />
           </Link>
           <Link
-            to={`/${userData.login}/following`}
+            to={
+              userData.following === 0
+                ? `/${userData.login}/#`
+                : `/${userData.login}/following`
+            }
             onClick={() => onClick("Following", userData.following)}
           >
             <Icon name="user" />
             {`Following ${userData.following} `} <br />
           </Link>
           <Link
-            to={`/${userData.login}/repository`}
+            to={
+              userData.public_repos === 0
+                ? `/${userData.login}/#`
+                : `/${userData.login}/repository`
+            }
             onClick={() => onClick("Repository", userData.public_repos)}
           >
             <Icon name="folder" />
