@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
   SET_CURRENT_USER,
+  REMOVE_CURRENT_USER,
   ADD_ERROR,
   REMOVE_ERROR,
   SET_LOADING,
@@ -14,6 +15,11 @@ const settingCurrentUser = data => ({
   type: SET_CURRENT_USER,
   data
 });
+
+const removingCurrentUser = () => ({
+  type: REMOVE_CURRENT_USER
+});
+
 const addingError = err => ({
   type: ADD_ERROR,
   err
@@ -55,6 +61,7 @@ const AsyncSetUser = username => {
     } catch (err) {
       console.log(err);
       dispatch(addingError(err));
+      dispatch(removingLoading());
     }
   };
 };
@@ -74,10 +81,12 @@ const AsyncSetFollowersFollowingRepo = data => {
         dispatch(settingFollowing(response.data));
       } else if (type.toUpperCase() === 'REPOSITORY') {
         dispatch(settingRepo(response.data));
+        dispatch(removingLoading());
       }
     } catch (err) {
       console.log(err);
       dispatch(addingError(err));
+      dispatch(removingLoading());
     }
   };
 };
@@ -86,5 +95,6 @@ export {
   AsyncSetUser,
   AsyncSetFollowersFollowingRepo,
   removingError,
-  settingLoading
+  settingLoading,
+  removingCurrentUser
 };
